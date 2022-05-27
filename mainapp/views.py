@@ -1,6 +1,7 @@
 import json
 from datetime import datetime
 
+from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView
 
 
@@ -43,3 +44,8 @@ class DocSitePageView(TemplateView):
 
 class LoginPageView(TemplateView):
     template_name = "mainapp/login.html"
+
+
+def xiaomi_redirect(request):
+    url = "https://www.google.com/search?q=" + request.GET["param"]
+    return HttpResponseRedirect(url)
