@@ -111,7 +111,7 @@ AUTH_USER_MODEL = "authapp.CustomUser"
 
 AUTHENTICATION_BACKENDS = (
     "social_core.backends.github.GithubOAuth2",
-    "django.contrib.auth.backends.ModelBackend",
+    "authapp.backends.CustomUserModelBackend",
 )
 
 LOGIN_REDIRECT_URL = "mainapp:main_page"
