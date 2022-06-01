@@ -15,7 +15,7 @@ class NewsPageView(TemplateView):
         # Get all previous data
         context = super().get_context_data(**kwargs)
         # Create your own data
-        context["news_qs"] = mainapp_models.News.objects.all()[:6]
+        context["news_qs"] = mainapp_models.News.objects.all()[:5]
         return context
 
 
@@ -54,7 +54,3 @@ class ContactsPageView(TemplateView):
 
 class DocSitePageView(TemplateView):
     template_name = "mainapp/doc_site.html"
-
-
-class LoginPageView(TemplateView):
-    template_name = "mainapp/login.html"
