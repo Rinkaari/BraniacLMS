@@ -33,6 +33,7 @@ class TextInputFilter(InputFilter):
 class NewsAdmin(admin.ModelAdmin):
     search_fields = ["title", "preambule", "body"]
     list_filter = (TextInputFilter,)
+    date_hierarchy = "created"
 
 
 @admin.register(mainapp_models.Lesson)
