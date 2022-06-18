@@ -82,7 +82,6 @@ class CoursesDetailView(TemplateView):
                 context["feedback_form"] = mainapp_forms.CourseFeedbackForm(
                     course=context["course_object"], user=self.request.user
                 )
-
         cached_feedback = cache.get(f"feedback_list_{pk}")
         if not cached_feedback:
             context["feedback_list"] = (
@@ -94,7 +93,6 @@ class CoursesDetailView(TemplateView):
         else:
             context["feedback_list"] = cached_feedback
 
-        return context
 
 
 class CourseFeedbackFormProcessView(LoginRequiredMixin, CreateView):

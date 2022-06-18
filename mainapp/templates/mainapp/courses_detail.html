@@ -58,7 +58,6 @@
   </div>
 </div>
 <div class="accordion" id="accordionLessons">
-
   {% cache 300 lessons %}
   {% for item in lessons %}
   <div class="card">
@@ -71,7 +70,6 @@
         </button>
       </h2>
     </div>
-
     <div id="collapse{{ item.pk }}" class="collapse"
       aria-labelledby="headLessonPk{{ item.pk }}"
       data-parent="#accordionLessons">

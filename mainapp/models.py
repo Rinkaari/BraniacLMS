@@ -55,6 +55,7 @@ class Courses(models.Model):
         ordering = ("created",)
 
 
+
 class CourseFeedback(models.Model):
     RATING = ((5, "⭐⭐⭐⭐⭐"), (4, "⭐⭐⭐⭐"), (3, "⭐⭐⭐"), (2, "⭐⭐"), (1, "⭐"))
     course = models.ForeignKey(Courses, on_delete=models.CASCADE, verbose_name=_("Course"))
