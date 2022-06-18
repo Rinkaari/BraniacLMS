@@ -21,6 +21,7 @@ class CourseFeedbackForm(forms.ModelForm):
             "rating": forms.RadioSelect(),
         }
 
+
 class MailFeedbackForm(forms.Form):
     user_id = forms.IntegerField(widget=forms.HiddenInput)
     message = forms.CharField(
@@ -33,4 +34,3 @@ class MailFeedbackForm(forms.Form):
         super().__init__(*args, **kwargs)
         if user:
             self.fields["user_id"].initial = user.pk
-

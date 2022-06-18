@@ -92,7 +92,7 @@ class CoursesDetailView(TemplateView):
             cache.set(f"feedback_list_{pk}", context["feedback_list"], timeout=300)  # 5 minutes
         else:
             context["feedback_list"] = cached_feedback
-
+        return context
 
 
 class CourseFeedbackFormProcessView(LoginRequiredMixin, CreateView):
