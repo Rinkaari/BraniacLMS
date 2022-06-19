@@ -82,6 +82,7 @@ class CoursesDetailView(TemplateView):
                 context["feedback_form"] = mainapp_forms.CourseFeedbackForm(
                     course=context["course_object"], user=self.request.user
                 )
+
         cached_feedback = cache.get(f"feedback_list_{pk}")
         if not cached_feedback:
             context["feedback_list"] = (
@@ -90,8 +91,17 @@ class CoursesDetailView(TemplateView):
                 .select_related()
             )
             cache.set(f"feedback_list_{pk}", context["feedback_list"], timeout=300)  # 5 minutes
+
+            # Archive object for tests --->
+            # import pickle
+
+            # with open(f"mainapp/fixtures/005_feedback_list_{pk}.bin", "wb") as outf:
+            #     pickle.dump(context["feedback_list"], outf)
+            # <--- Archive object for tests
+
         else:
             context["feedback_list"] = cached_feedback
+
         return context
 
 
