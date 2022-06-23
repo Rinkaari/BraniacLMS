@@ -35,6 +35,11 @@
 
   <div class="container-md">
 
+  
+    {% if page_obj %}
+    {% include 'includes/current_page.html' %}
+    {% endif %}  
+
     {% block content %}
 
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur
@@ -46,6 +51,10 @@
     {% endblock content %}
 
   </div>
+
+  {% if page_obj %}
+  {% include 'includes/pagination.html' %}
+  {% endif %}
 
   <!-- Footer -->
 

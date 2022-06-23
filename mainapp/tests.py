@@ -188,7 +188,7 @@ class TestNewsSelenium(StaticLiveServerTestCase):
         try:
             self.assertEqual(
                 navbar_el.value_of_css_property("background-color"),
-                "rgb(255, 255, 155)",
+                "rgb(255, 255, 255)",
             )
         except AssertionError:
             with open("var/screenshots/001_navbar_el_scrnsht.png", "wb") as outf:
