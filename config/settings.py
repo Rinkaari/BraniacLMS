@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "authapp",
     "crispy_forms",
     "debug_toolbar",
+    "django_extensions",
 ]
 
 MIDDLEWARE = [

@@ -17,7 +17,9 @@ class TestNewsPage(TestCase):
         super().setUp()
         self.client_with_auth = Client()
         self.user_admin = authapp_models.CustomUser.objects.get(username="admin")
-        self.client_with_auth.force_login(self.user_admin, backend="django.contrib.auth.backends.ModelBackend")
+        self.client_with_auth.force_login(
+            self.user_admin, backend="django.contrib.auth.backends.CustomUserModelBackend"
+        )
 
     def test_page_open_list(self):
         path = reverse("mainapp:news")
