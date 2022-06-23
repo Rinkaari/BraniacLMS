@@ -16,7 +16,7 @@ class TestNewsPage(TestCase):
     def setUp(self):
         super().setUp()
         self.client_with_auth = Client()
-        self.user_admin = authapp_models.CustomUser.objects.get(username="admin")
+        self.user_admin = authapp_models.CustomUser.objects.get(username="madmin")
         self.client_with_auth.force_login(
             self.user_admin, backend="django.contrib.auth.backends.CustomUserModelBackend"
         )
@@ -161,8 +161,8 @@ class TestNewsSelenium(StaticLiveServerTestCase):
         button_enter = WebDriverWait(self.selenium, 5).until(
             EC.visibility_of_element_located((By.CSS_SELECTOR, '[type="submit"]'))
         )
-        self.selenium.find_element_by_id("id_username").send_keys("admin")
-        self.selenium.find_element_by_id("id_password").send_keys("qwe123")
+        self.selenium.find_element_by_id("id_username").send_keys("madmin")
+        self.selenium.find_element_by_id("id_password").send_keys("admin")
         button_enter.click()
         # Wait for footer
         WebDriverWait(self.selenium, 5).until(EC.visibility_of_element_located((By.CLASS_NAME, "mt-auto")))
@@ -196,6 +196,43 @@ class TestNewsSelenium(StaticLiveServerTestCase):
             with open("var/screenshots/001_navbar_el_scrnsht.png", "wb") as outf:
                 outf.write(navbar_el.screenshot_as_png)
             raise
+
+    def test_language_switch(self):
+        path = f"{self.live_server_url}{reverse('mainapp:main_page')}"
+        self.selenium.get(path)
+        news_lang = WebDriverWait(self.selenium, 5).until(
+            EC.visibility_of_element_located((By.CSS_SELECTOR, f'[href="/mainapp/news/"]'))
+        )
+        if news_lang.text == "News":
+            print("Trying to switch language to ru...")
+            button_switch_ru = WebDriverWait(self.selenium, 5).until(EC.visibility_of_element_located((By.ID, "ru")))
+            button_switch_ru.click()
+            news_lang = WebDriverWait(self.selenium, 5).until(
+                EC.visibility_of_element_located((By.CSS_SELECTOR, f'[href="/mainapp/news/"]'))
+            )
+            assert news_lang.text == "Новости"
+            button_switch_en = WebDriverWait(self.selenium, 5).until(EC.visibility_of_element_located((By.ID, "en")))
+            print("Trying to switch language to en...")
+            button_switch_en.click()
+            news_lang = WebDriverWait(self.selenium, 5).until(
+                EC.visibility_of_element_located((By.CSS_SELECTOR, f'[href="/mainapp/news/"]'))
+            )
+            assert news_lang.text == "News"
+        else:
+            button_switch_en = WebDriverWait(self.selenium, 5).until(EC.visibility_of_element_located((By.ID, "en")))
+            print("Trying to switch language to en...")
+            button_switch_en.click()
+            news_lang = WebDriverWait(self.selenium, 5).until(
+                EC.visibility_of_element_located((By.CSS_SELECTOR, f'[href="/mainapp/news/"]'))
+            )
+            assert news_lang.text == "News"
+            print("Trying to switch language to ru...")
+            button_switch_ru = WebDriverWait(self.selenium, 5).until(EC.visibility_of_element_located((By.ID, "ru")))
+            button_switch_ru.click()
+            news_lang = WebDriverWait(self.selenium, 5).until(
+                EC.visibility_of_element_located((By.CSS_SELECTOR, f'[href="/mainapp/news/"]'))
+            )
+            assert news_lang.text == "Новости"
 
     def tearDown(self):
         # Close browser

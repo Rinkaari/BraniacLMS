@@ -67,14 +67,14 @@
       </ul>
       <div class="row justify-content-end m-0">
         <div class="col p-0 border-right">
-          <form action="{% url 'set_language' %}" method="post">
+          <form action="{% url 'set_language' %}" method="post" id="ru">
             {% csrf_token %}
             <input name="language" type="hidden" value="ru">
             <button type="submit" class="btn btn-link">🇷🇺</button>
           </form>
         </div>
         <div class="col p-0 border-left">
-          <form action="{% url 'set_language' %}" method="post">
+          <form action="{% url 'set_language' %}" method="post" id="en">
             {% csrf_token %}
             <input name="language" type="hidden" value="en">
             <button type="submit" class="btn btn-link">🇬🇧</button>
