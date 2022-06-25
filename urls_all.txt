@@ -1,0 +1,89 @@
+/	django.views.generic.base.RedirectView
+/__debug__/history_refresh/	debug_toolbar.panels.history.views.history_refresh	djdt:history_refresh
+/__debug__/history_sidebar/	debug_toolbar.panels.history.views.history_sidebar	djdt:history_sidebar
+/__debug__/render_panel/	debug_toolbar.views.render_panel	djdt:render_panel
+/__debug__/sql_explain/	debug_toolbar.panels.sql.views.sql_explain	djdt:sql_explain
+/__debug__/sql_profile/	debug_toolbar.panels.sql.views.sql_profile	djdt:sql_profile
+/__debug__/sql_select/	debug_toolbar.panels.sql.views.sql_select	djdt:sql_select
+/__debug__/template_source/	debug_toolbar.panels.templates.views.template_source	djdt:template_source
+/admin/	django.contrib.admin.sites.index	admin:index
+/admin/<app_label>/	django.contrib.admin.sites.app_index	admin:app_list
+/admin/<url>	django.contrib.admin.sites.catch_all_view
+/admin/auth/group/	django.contrib.admin.options.changelist_view	admin:auth_group_changelist
+/admin/auth/group/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/auth/group/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:auth_group_change
+/admin/auth/group/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:auth_group_delete
+/admin/auth/group/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:auth_group_history
+/admin/auth/group/add/	django.contrib.admin.options.add_view	admin:auth_group_add
+/admin/authapp/customuser/	django.contrib.admin.options.changelist_view	admin:authapp_customuser_changelist
+/admin/authapp/customuser/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/authapp/customuser/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:authapp_customuser_change
+/admin/authapp/customuser/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:authapp_customuser_delete
+/admin/authapp/customuser/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:authapp_customuser_history
+/admin/authapp/customuser/add/	django.contrib.admin.options.add_view	admin:authapp_customuser_add
+/admin/autocomplete/	django.contrib.admin.sites.autocomplete_view	admin:autocomplete
+/admin/jsi18n/	django.contrib.admin.sites.i18n_javascript	admin:jsi18n
+/admin/login/	django.contrib.admin.sites.login	admin:login
+/admin/logout/	django.contrib.admin.sites.logout	admin:logout
+/admin/mainapp/courses/	django.contrib.admin.options.changelist_view	admin:mainapp_courses_changelist
+/admin/mainapp/courses/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/mainapp/courses/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:mainapp_courses_change
+/admin/mainapp/courses/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:mainapp_courses_delete
+/admin/mainapp/courses/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:mainapp_courses_history
+/admin/mainapp/courses/add/	django.contrib.admin.options.add_view	admin:mainapp_courses_add
+/admin/mainapp/lesson/	django.contrib.admin.options.changelist_view	admin:mainapp_lesson_changelist
+/admin/mainapp/lesson/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/mainapp/lesson/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:mainapp_lesson_change
+/admin/mainapp/lesson/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:mainapp_lesson_delete
+/admin/mainapp/lesson/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:mainapp_lesson_history
+/admin/mainapp/lesson/add/	django.contrib.admin.options.add_view	admin:mainapp_lesson_add
+/admin/mainapp/news/	django.contrib.admin.options.changelist_view	admin:mainapp_news_changelist
+/admin/mainapp/news/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/mainapp/news/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:mainapp_news_change
+/admin/mainapp/news/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:mainapp_news_delete
+/admin/mainapp/news/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:mainapp_news_history
+/admin/mainapp/news/add/	django.contrib.admin.options.add_view	admin:mainapp_news_add
+/admin/password_change/	django.contrib.admin.sites.password_change	admin:password_change
+/admin/password_change/done/	django.contrib.admin.sites.password_change_done	admin:password_change_done
+/admin/r/<int:content_type_id>/<path:object_id>/	django.contrib.contenttypes.views.shortcut	admin:view_on_site
+/admin/social_django/association/	django.contrib.admin.options.changelist_view	admin:social_django_association_changelist
+/admin/social_django/association/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/social_django/association/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:social_django_association_change
+/admin/social_django/association/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:social_django_association_delete
+/admin/social_django/association/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:social_django_association_history
+/admin/social_django/association/add/	django.contrib.admin.options.add_view	admin:social_django_association_add
+/admin/social_django/nonce/	django.contrib.admin.options.changelist_view	admin:social_django_nonce_changelist
+/admin/social_django/nonce/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/social_django/nonce/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:social_django_nonce_change
+/admin/social_django/nonce/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:social_django_nonce_delete
+/admin/social_django/nonce/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:social_django_nonce_history
+/admin/social_django/nonce/add/	django.contrib.admin.options.add_view	admin:social_django_nonce_add
+/admin/social_django/usersocialauth/	django.contrib.admin.options.changelist_view	admin:social_django_usersocialauth_changelist
+/admin/social_django/usersocialauth/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/social_django/usersocialauth/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:social_django_usersocialauth_change
+/admin/social_django/usersocialauth/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:social_django_usersocialauth_delete
+/admin/social_django/usersocialauth/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:social_django_usersocialauth_history
+/admin/social_django/usersocialauth/add/	django.contrib.admin.options.add_view	admin:social_django_usersocialauth_add
+/authapp/login/	authapp.views.CustomLoginView	authapp:login
+/authapp/logout/	authapp.views.CustomLogoutView	authapp:logout
+/authapp/profile_edit/<int:pk>/	authapp.views.ProfileEditView	authapp:profile_edit
+/authapp/register/	authapp.views.RegisterView	authapp:register
+/i18n/setlang/	django.views.i18n.set_language	set_language
+/mainapp/	mainapp.views.MainPageView	mainapp:main_page
+/mainapp/contacts/	mainapp.views.ContactsPageView	mainapp:contacts
+/mainapp/course_feedback/	mainapp.views.CourseFeedbackFormProcessView	mainapp:course_feedback
+/mainapp/courses/	mainapp.views.CoursesListView	mainapp:courses
+/mainapp/courses/<int:pk>/	mainapp.views.CoursesDetailView	mainapp:courses_detail
+/mainapp/doc_site/	mainapp.views.DocSitePageView	mainapp:doc_site
+/mainapp/log_download/	mainapp.views.LogDownloadView	mainapp:log_download
+/mainapp/log_view/	mainapp.views.LogView	mainapp:log_view
+/mainapp/news/	mainapp.views.NewsListView	mainapp:news
+/mainapp/news/<int:pk>/delete	mainapp.views.NewsDeleteView	mainapp:news_delete
+/mainapp/news/<int:pk>/detail	mainapp.views.NewsDetailView	mainapp:news_detail
+/mainapp/news/<int:pk>/update	mainapp.views.NewsUpdateView	mainapp:news_update
+/mainapp/news/create/	mainapp.views.NewsCreateView	mainapp:news_create
+/media/<path>	django.views.static.serve
+/social_auth/complete/<str:backend>/	social_django.views.complete	social:complete
+/social_auth/disconnect/<str:backend>/	social_django.views.disconnect	social:disconnect
+/social_auth/disconnect/<str:backend>/<int:association_id>/	social_django.views.disconnect	social:disconnect_individual
+/social_auth/login/<str:backend>/	social_django.views.auth	social:begin

@@ -39,7 +39,6 @@ class NewsCreateView(PermissionRequiredMixin, CreateView):
     success_url = reverse_lazy("mainapp:news")
     permission_required = ("mainapp.add_news",)
 
-
 class NewsDetailView(DetailView):
     model = mainapp_models.News
 
@@ -57,13 +56,12 @@ class NewsDeleteView(PermissionRequiredMixin, DeleteView):
     permission_required = ("mainapp.delete_news",)
 
 
-class CoursesListView(TemplateView):
-    template_name = "mainapp/courses_list.html"
+class CoursesListView(ListView):
+    model = mainapp_models.Courses
+    paginate_by = 3
 
-    def get_context_data(self, **kwargs):
-        context = super(CoursesListView, self).get_context_data(**kwargs)
-        context["objects"] = mainapp_models.Courses.objects.all()[:7]
-        return context
+    def get_queryset(self):
+        return super().get_queryset().filter(deleted=False)
 
 
 class CoursesDetailView(TemplateView):
@@ -90,6 +88,13 @@ class CoursesDetailView(TemplateView):
                 .select_related()
             )
             cache.set(f"feedback_list_{pk}", context["feedback_list"], timeout=300)  # 5 minutes
+            # Archive object for tests --->
+            # import pickle
+
+            # with open(f"mainapp/fixtures/005_feedback_list_{pk}.bin", "wb") as outf:
+            #     pickle.dump(context["feedback_list"], outf)
+            # <--- Archive object for tests
+
         else:
             context["feedback_list"] = cached_feedback
         return context

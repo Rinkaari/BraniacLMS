@@ -8,7 +8,7 @@ app_name = MainappConfig.name
 
 urlpatterns = [
     path("", views.MainPageView.as_view(), name="main_page"),
-    path("news/", cache_page(60 * 5)(views.NewsListView.as_view()), name="news"),
+    path("news/", views.NewsListView.as_view(), name="news"),
     path("news/create/", views.NewsCreateView.as_view(), name="news_create"),
     path(
         "news/<int:pk>/detail",
@@ -27,7 +27,7 @@ urlpatterns = [
     ),
     path(
         "courses/",
-        cache_page(60 * 5)(views.CoursesListView.as_view()),  # 5 minutes
+        views.CoursesListView.as_view(),
         name="courses",
     ),
     path(
