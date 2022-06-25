@@ -39,7 +39,6 @@ class NewsCreateView(PermissionRequiredMixin, CreateView):
     success_url = reverse_lazy("mainapp:news")
     permission_required = ("mainapp.add_news",)
 
-
 class NewsDetailView(DetailView):
     model = mainapp_models.News
 
@@ -81,7 +80,6 @@ class CoursesDetailView(TemplateView):
                 context["feedback_form"] = mainapp_forms.CourseFeedbackForm(
                     course=context["course_object"], user=self.request.user
                 )
-
         cached_feedback = cache.get(f"feedback_list_{pk}")
         if not cached_feedback:
             context["feedback_list"] = (
@@ -90,7 +88,6 @@ class CoursesDetailView(TemplateView):
                 .select_related()
             )
             cache.set(f"feedback_list_{pk}", context["feedback_list"], timeout=300)  # 5 minutes
-
             # Archive object for tests --->
             # import pickle
 
@@ -100,7 +97,6 @@ class CoursesDetailView(TemplateView):
 
         else:
             context["feedback_list"] = cached_feedback
-
         return context
 
 
