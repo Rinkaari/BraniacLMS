@@ -52,7 +52,7 @@ class Courses(models.Model):
     class Meta:
         verbose_name = _("Course")
         verbose_name_plural = _("Courses")
-        ordering = ("-created",)
+        ordering = ("created",)
 
 
 class CourseFeedback(models.Model):
